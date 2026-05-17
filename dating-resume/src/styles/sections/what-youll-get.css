@@ -1,0 +1,57 @@
+/* What you'll get section */
+
+.bring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bring-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: var(--star-blue);
+  line-height: 1.5;
+}
+
+.bring-item:nth-child(6n + 1) .bring-dot {
+  background: var(--light-cyan);
+  box-shadow: 0 0 6px var(--light-cyan);
+}
+
+.bring-item:nth-child(6n + 2) .bring-dot {
+  background: var(--sky-amber);
+  box-shadow: 0 0 6px var(--sky-amber);
+}
+
+.bring-item:nth-child(6n + 3) .bring-dot {
+  background: var(--light-green);
+  box-shadow: 0 0 6px var(--light-green);
+}
+
+.bring-item:nth-child(6n + 4) .bring-dot {
+  background: var(--red-tint);
+  box-shadow: 0 0 6px var(--red-tint);
+}
+
+.bring-item:nth-child(6n + 5) .bring-dot {
+  background: var(--light-gold);
+  box-shadow: 0 0 6px var(--light-gold);
+}
+
+.bring-item:nth-child(6n) .bring-dot {
+  background: var(--cyan-tint);
+  box-shadow: 0 0 6px var(--cyan-tint);
+}
+
+.bring-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 0;
+  background: var(--light-warm);
+  margin-top: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px var(--light-warm);
+}

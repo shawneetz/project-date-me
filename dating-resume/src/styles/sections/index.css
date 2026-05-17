@@ -1,0 +1,9 @@
+/* Profile section styles (import order matches page flow) */
+@import "./layout.css";
+@import "./hero.css";
+@import "./personal-takes.css";
+@import "./hobbies.css";
+@import "./looking-for.css";
+@import "./deal-breakers.css";
+@import "./what-youll-get.css";
+@import "./quote.css";

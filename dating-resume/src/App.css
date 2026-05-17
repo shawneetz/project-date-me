@@ -1,5 +1,5 @@
 @import "./styles/component.css";
-@import "./styles/sections.css";
+@import "./styles/sections/index.css";
 
 * {
   box-sizing: border-box;
@@ -14,6 +14,19 @@ body {
   font-weight: 400;
   line-height: 1.6;
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(30, 95, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 95, 110, 0.05) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .app {
@@ -24,16 +37,16 @@ body {
 
 /* Mobile-first: one section per phone viewport (no scroll snap) */
 .profile-page .app {
-  padding: 0 1rem 2rem;
+  padding: 0 1rem 1.25rem;
   max-width: 100%;
 }
 
 .profile-panel {
-  min-height: 100dvh;
+  min-height: 58dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.25rem 0;
+  padding: 0.25rem 0;
   box-sizing: border-box;
 }
 
@@ -48,11 +61,17 @@ body {
 
   .profile-panel {
     min-height: auto;
-    padding: 0;
+    padding: 0.15rem 0;
   }
 
   .profile-page .app {
-    padding: 2rem 1.5rem 4rem;
+    padding: 1rem 1.5rem 2rem;
     max-width: 680px;
   }
+}
+
+.profile-page,
+.profile-page .app {
+  position: relative;
+  z-index: 1;
 }

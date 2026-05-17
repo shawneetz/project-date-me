@@ -2,37 +2,92 @@
 @import "tailwindcss";
 
 :root {
-  /* === PIXEL CITY PALETTE === */
+  /* Night Sky — Backgrounds */
+  --sky-deep: #0d1f2d;
+  --void: #080c1c;
+  --abyss: #050c14;
+  --sky-mid-lo: #162d3c;
+  --sky-mid: #1e3a50;
+  --dusk-shadow: #122332;
+  --building-dark: #0a1520;
+  --pitch: #060e18;
 
-  /* SKY / BACKGROUNDS */
-  --sky-deep: #0d1f2d; /* Deep night sky */
-  --sky-mid: #1a3a4a; /* Mid night sky */
-  --sky-teal: #1e5f6e; /* Teal horizon glow */
-  --sky-dusk: #2e8b8a; /* Dusk teal */
-  --sky-amber: #e8a44a; /* Horizon amber warmth */
-  --sky-gold: #f0c060; /* Horizon gold */
+  /* Teal Horizon — Structure & Borders */
+  --teal-shadow: #1e4e5a;
+  --sky-teal: #1e5f6e;
+  --teal-deep: #184155;
+  --teal-ink: #144164;
+  --teal-mid: #3c6e7d;
+  --teal-shade: #285564;
+  --teal-light: #468294;
+  --sky-dusk: #2e8b8a;
 
-  /* BUILDING SILHOUETTES */
-  --building-dark: #0a1520; /* Darkest building shadow */
-  --building-mid: #162535; /* Mid building */
-  --building-blue: #1e3a50; /* Blue-tinted building */
+  /* Cyan Flicker — Active & Messages */
+  --cyan-shadow: #48a8b0;
+  --cyan-mid: #328c96;
+  --light-cyan: #60c8d0;
+  --cyan-tint: #80dce4;
+  --cyan-bright: #a0e8ee;
+  --cyan-ghost: #c8f2f5;
 
-  /* WINDOW LIGHTS / ACCENTS */
-  --light-warm: #f5a623; /* Warm window glow */
-  --light-amber: #e8852a; /* Deep amber light */
-  --light-gold: #ffd166; /* Bright gold accent */
-  --light-red: #e05050; /* Signal red light */
-  --light-green: #88c070; /* Traffic green */
-  --light-cyan: #60c8d0; /* Cyan flicker */
+  /* Amber & Gold — CTA & Headlines */
+  --sky-gold: #f0c060;
+  --sky-amber: #e8a44a;
+  --light-gold: #ffd166;
+  --gold-tint: #f8dc82;
+  --amber-dark: #dc9432;
+  --amber-deep: #c87d1e;
+  --bronze: #af6414;
+  --light-warm: #f5a623;
+  --gold-near-white: #ffe596;
 
-  /* STAR / PARTICLE */
-  --star-white: #e8f0ff; /* Star white */
-  --star-blue: #a8c8e0; /* Star blue tint */
+  /* Deep Amber — Warm Shadows */
+  --light-amber: #e8852a;
+  --rust: #c86e23;
+  --burnt: #aa5a19;
 
-  /* Legacy aliases for compatibility */
+  /* Signal Red — Likes & Alerts */
+  --red-ink: #8c1e1e;
+  --red-shadow: #c04141;
+  --light-red: #e05050;
+  --red-tint: #f06e6e;
+  --red-bright: #f89696;
+  --red-deep: #c83737;
+
+  /* Traffic Green — Online & Success */
+  --green-ink: #325537;
+  --green-shadow: #46873b;
+  --green-mid: #64a550;
+  --light-green: #88c070;
+  --green-tint: #afcf91;
+  --green-light: #c8e0aa;
+  --forest: #507341;
+
+  /* Star Blue — Text & Neutral */
+  --steel-blue: #3c5f80;
+  --slate: #6482a0;
+  --blue-mist: #82aab4;
+  --star-blue: #a8c8e0;
+  --blue-pale: #d2e1f0;
+  --star-white: #e8f0ff;
+  --blue-gray: #5a7d96;
+
+  /* Extremes & Street */
+  --pure-white: #ffffff;
+  --cool-white: #dce1eb;
+  --silver: #b4becd;
+  --blue-silver: #8c96af;
+  --night-navy: #191e32;
+  --navy-mid: #323750;
+  --pavement: #5a637d;
+  --deep-navy: #2d3250;
+  --midnight: #191428;
+  --black: #000000;
+
+  /* Semantic aliases */
   --bg: var(--sky-deep);
   --paper: var(--sky-mid);
-  --warm-paper: var(--building-mid);
+  --warm-paper: var(--sky-mid-lo);
   --ink: var(--star-white);
   --soft-ink: var(--star-blue);
   --faded: var(--sky-dusk);
@@ -40,7 +95,16 @@
   --dust: var(--light-warm);
   --border: var(--sky-teal);
   --pixel-border: var(--sky-dusk);
-  --shadow: rgba(10, 21, 32, 0.3);
+  --building-mid: var(--sky-mid-lo);
+  --shadow: rgba(10, 21, 32, 0.45);
+
+  /* Accent rotation for cards */
+  --accent-1: var(--light-cyan);
+  --accent-2: var(--sky-amber);
+  --accent-3: var(--light-green);
+  --accent-4: var(--light-red);
+  --accent-5: var(--cyan-tint);
+  --accent-6: var(--light-gold);
 }
 
 * {

@@ -1,14 +1,21 @@
-import { useState } from "react";
-
-export default function ExpandableCard({ icon, title, preview, body }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function ExpandableCard({
+  icon,
+  title,
+  preview,
+  body,
+  isOpen,
+  onToggle,
+  accentIndex = 0,
+}) {
   return (
-    <div className="card">
+    <article
+      className={`card card--accent-${(accentIndex % 6) + 1}${isOpen ? " card--open" : ""}`}
+    >
       <button
         type="button"
         className="card-trigger"
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={onToggle}
+        aria-expanded={isOpen}
       >
         <div className="card-trigger-left">
           <div className="card-icon">{icon}</div>
@@ -24,6 +31,6 @@ export default function ExpandableCard({ icon, title, preview, body }) {
           <p>{body}</p>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

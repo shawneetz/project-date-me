@@ -1,4 +1,13 @@
-export default function HobbyCard({ title, description, imageUrl, imageAlt }) {
+import { truncateHobbyDescription } from "../utils/hobbyCard";
+
+export default function HobbyCard({
+  title,
+  description,
+  imageUrl,
+  imageAlt,
+}) {
+  const text = truncateHobbyDescription(description);
+
   return (
     <article className="hobby-card">
       <div className="hobby-card-media">
@@ -10,7 +19,7 @@ export default function HobbyCard({ title, description, imageUrl, imageAlt }) {
       </div>
       <div className="hobby-card-body">
         <h3 className="hobby-card-title">{title}</h3>
-        <p className="hobby-card-description">{description}</p>
+        <p className="hobby-card-description">{text}</p>
       </div>
     </article>
   );

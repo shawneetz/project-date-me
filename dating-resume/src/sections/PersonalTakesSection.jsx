@@ -1,9 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ExpandableCard from "../components/ExpandableCard";
-import { getIcon } from "../components/iconMap";
+import { PersonalTakesGrid } from "../components/personal-takes";
 
-export default function PersonalTakesSection({ items }) {
+export default function PersonalTakesSection({ categories }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.12 });
 
@@ -17,16 +16,11 @@ export default function PersonalTakesSection({ items }) {
       className="section"
     >
       <div className="section-label">Personal takes</div>
+      <p className="takes-section-hint">
+        Tap a category to read hot takes, opinions, and tiny truths.
+      </p>
 
-      {items.map((item) => (
-        <ExpandableCard
-          key={item.id}
-          icon={getIcon(item.iconKey)}
-          title={item.title}
-          preview={item.preview}
-          body={item.body}
-        />
-      ))}
+      <PersonalTakesGrid categories={categories} />
     </motion.section>
   );
 }

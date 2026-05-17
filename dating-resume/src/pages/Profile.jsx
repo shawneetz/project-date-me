@@ -18,13 +18,13 @@ export default function Profile() {
   const profile = username === "shawn" ? shawnProfile : null;
 
   const hero = useReveal(0);
-  const qualities = useReveal(150);
-  const personalTakes = useReveal(150);
-  const hobbies = useReveal(200);
-  const looking = useReveal(250);
-  const dealBreakers = useReveal(300);
-  const whatYoullGet = useReveal(350);
-  const quote = useReveal(400);
+  const qualities = useReveal(60);
+  const personalTakes = useReveal(100);
+  const hobbies = useReveal(140);
+  const looking = useReveal(180);
+  const dealBreakers = useReveal(220);
+  const whatYoullGet = useReveal(260);
+  const quote = useReveal(300);
 
   if (!profile) {
     return (
@@ -62,7 +62,7 @@ export default function Profile() {
           ref={personalTakes.ref}
           className={`profile-panel reveal ${personalTakes.visible ? "visible" : ""}`}
         >
-          <PersonalTakesSection items={profile.personalTakes} />
+          <PersonalTakesSection categories={profile.personalTakesCategories} />
         </div>
 
         <div

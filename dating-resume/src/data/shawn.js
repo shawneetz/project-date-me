@@ -1,6 +1,8 @@
 // src/data/shawn.js
 // This is YOUR resume. Edit any field and it updates everywhere.
 
+import { personalTakesCategories } from "./personalTakesCategories";
+
 export const shawnProfile = {
   username: "shawn",
   name: "Shawn Alfred Padilla",
@@ -38,29 +40,7 @@ export const shawnProfile = {
     },
   ],
 
-  personalTakes: [
-    {
-      id: "love-language",
-      iconKey: "kettle",
-      title: "Acts of Service",
-      preview: "I show care by doing, not just saying.",
-      body: "My love language leans toward acts of service — cooking for you, fixing something, showing up when it matters. Words matter too, but I'd rather prove it than only say it.",
-    },
-    {
-      id: "texting",
-      iconKey: "radio",
-      title: "Low-Pressure Texter",
-      preview: "No 24/7 chat required — quality over quantity.",
-      body: "I don't need constant texting to feel connected. I'd rather send something thoughtful than fill silence. When we're together, I'm fully present; when we're apart, I trust the bond.",
-    },
-    {
-      id: "dates",
-      iconKey: "bicycle",
-      title: "Casual Dates Win",
-      preview: "Coffee, walks, night markets — keep it real.",
-      body: "Fancy dinners are fine sometimes, but I connect best over low-stakes plans: a good coffee, a walk, trying street food, or building something together. The vibe matters more than the price tag.",
-    },
-  ],
+  personalTakesCategories,
 
   hobbies: [
     {

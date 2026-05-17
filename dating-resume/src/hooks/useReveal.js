@@ -12,7 +12,7 @@ export function useReveal(delay = 0) {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" },
     );
 
     if (ref.current) observer.observe(ref.current);

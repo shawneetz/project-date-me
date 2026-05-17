@@ -5,16 +5,77 @@
   background: var(--building-mid);
   border: 1px solid rgba(30, 95, 110, 0.3);
   border-radius: 4px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   transition:
     box-shadow 0.2s ease,
     border-color 0.2s ease;
 }
 
-.card:hover {
+.card:hover,
+.card--open {
   border-color: var(--sky-teal);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card--accent-1 .card-icon {
+  color: var(--light-cyan);
+  border-color: rgba(96, 200, 208, 0.45);
+  background: rgba(96, 200, 208, 0.12);
+}
+
+.card--accent-2 .card-icon {
+  color: var(--sky-amber);
+  border-color: rgba(232, 164, 74, 0.45);
+  background: rgba(232, 164, 74, 0.12);
+}
+
+.card--accent-3 .card-icon {
+  color: var(--light-green);
+  border-color: rgba(136, 192, 112, 0.45);
+  background: rgba(136, 192, 112, 0.12);
+}
+
+.card--accent-4 .card-icon {
+  color: var(--red-tint);
+  border-color: rgba(224, 80, 80, 0.4);
+  background: rgba(224, 80, 80, 0.1);
+}
+
+.card--accent-5 .card-icon {
+  color: var(--cyan-tint);
+  border-color: rgba(128, 220, 228, 0.4);
+  background: rgba(128, 220, 228, 0.1);
+}
+
+.card--accent-6 .card-icon {
+  color: var(--light-gold);
+  border-color: rgba(255, 209, 102, 0.4);
+  background: rgba(255, 209, 102, 0.1);
+}
+
+.card--accent-1.card--open {
+  border-color: rgba(96, 200, 208, 0.55);
+}
+
+.card--accent-2.card--open {
+  border-color: rgba(232, 164, 74, 0.55);
+}
+
+.card--accent-3.card--open {
+  border-color: rgba(136, 192, 112, 0.55);
+}
+
+.card--accent-4.card--open {
+  border-color: rgba(224, 80, 80, 0.5);
+}
+
+.card--accent-5.card--open {
+  border-color: rgba(128, 220, 228, 0.5);
+}
+
+.card--accent-6.card--open {
+  border-color: rgba(255, 209, 102, 0.5);
 }
 
 .card-trigger {
@@ -110,181 +171,3 @@
   display: block;
 }
 
-/* =====================
-   HOBBY CARD
-   ===================== */
-.hobby-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-height: 320px;
-  background: var(--building-mid);
-  border: 1px solid rgba(30, 95, 110, 0.3);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-}
-
-.hobby-card-media {
-  position: relative;
-  width: 100%;
-  height: 140px;
-  max-height: 140px;
-  flex-shrink: 0;
-  background: var(--building-dark);
-  overflow: hidden;
-}
-
-.hobby-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hobby-card-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--building-mid) 0%,
-    var(--sky-teal) 100%
-  );
-}
-
-.hobby-card-body {
-  padding: 0.875rem 1.15rem 1rem;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-}
-
-.hobby-card-title {
-  font-family: "VT323", monospace;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--sky-gold);
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-}
-
-.hobby-card-description {
-  margin-top: 0.5rem;
-  font-family: "Space Mono", monospace;
-  font-size: 12.5px;
-  color: var(--star-blue);
-  line-height: 1.65;
-}
-
-@media (min-width: 640px) {
-  .hobby-card {
-    max-height: 380px;
-  }
-
-  .hobby-card-media {
-    height: 180px;
-    max-height: 180px;
-  }
-
-  .hobby-card-body {
-    padding: 1rem 1.25rem 1.15rem;
-  }
-
-  .hobby-card-description {
-    font-size: 13px;
-  }
-}
-
-/* =====================
-   HOBBY CAROUSEL
-   ===================== */
-.carousel-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  cursor: grab;
-  touch-action: pan-y;
-}
-
-.carousel-slide {
-  width: 100%;
-}
-
-.carousel-container:active {
-  cursor: grabbing;
-}
-
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 0;
-  padding: 0 0.5rem;
-  flex-shrink: 0;
-}
-
-.carousel-nav-btn {
-  background: transparent;
-  border: 1px solid rgba(30, 95, 110, 0.3);
-  color: var(--sky-dusk);
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-family: "VT323", monospace;
-  font-size: 18px;
-  transition: all 0.2s ease;
-}
-
-.carousel-nav-btn:hover {
-  border-color: var(--sky-amber);
-  color: var(--sky-amber);
-  background: rgba(232, 164, 74, 0.1);
-}
-
-.carousel-nav-btn:active {
-  transform: scale(0.95);
-}
-
-.carousel-dots {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-}
-
-.carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(30, 95, 110, 0.2);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.carousel-dot:hover {
-  background: rgba(30, 95, 110, 0.4);
-}
-
-.carousel-dot.active {
-  background: var(--sky-amber);
-  box-shadow: 0 0 8px rgba(232, 164, 74, 0.5);
-  width: 10px;
-  height: 10px;
-}
-
-.carousel-counter {
-  text-align: center;
-  margin-top: 0;
-  flex-shrink: 0;
-  font-family: "VT323", monospace;
-  font-size: 12px;
-  color: var(--sky-dusk);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
