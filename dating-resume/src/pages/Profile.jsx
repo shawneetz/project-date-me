@@ -8,6 +8,7 @@ import { shawnProfile } from "../data/shawn";
 
 import HeroSection from "../components/HeroSection";
 import CardSection from "../components/CardSection";
+import HobbyCarousel from "../components/HobbyCarousel";
 import LookingForCard from "../components/LookingForCard";
 import BringList from "../components/BringList";
 import DealBreakers from "../components/DealBreakers";
@@ -23,21 +24,28 @@ export default function Profile() {
 
   if (!profile) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <p className="text-neutral-500 text-sm">Profile not found.</p>
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
+        <p className="text-sm" style={{ color: "var(--faded)" }}>
+          Profile not found.
+        </p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div
+      className="min-h-screen text-black"
+      style={{ backgroundColor: "var(--bg)" }}
+    >
       <SectionDots />
 
-      {/* Content column — centered, max width 640px, padded sides */}
-      <div className="max-w-160 mx-auto px-5 pb-16">
+      <div className="app">
         <HeroSection profile={profile} />
         <CardSection id="about" label="About me" items={profile.about} />
-        <CardSection id="hobbies" label="Hobbies" items={profile.hobbies} />
+        <HobbyCarousel items={profile.hobbies} />
         <LookingForCard lookingFor={profile.lookingFor} />
         <BringList brings={profile.brings} />
         <DealBreakers dealBreakers={profile.dealBreakers} />

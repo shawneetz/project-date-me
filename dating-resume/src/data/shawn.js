@@ -4,30 +4,34 @@
 export const shawnProfile = {
   username: "shawn",
   name: "Shawn Alfred Padilla",
+  heroGreeting: "Hello, I'm Shawn!",
   mbti: "INTP",
   sign: "Capricorn",
   tag: "CS Student",
+  photoUrl: null,
+  photoCaption:
+    "CS student. Builder. Occasional midnight chef.\nSomewhere in the Philippines.",
   funFact:
-    "Once 3D-printed a custom phone stand at 2am just because I was bored. I got into it that I didn't sleep that night till I finished it. That's kind of how I approach everything.",
+    "I've been wanting to learn pixel art and just started the midnight I decided to create this website.",
 
   about: [
     {
       id: "spontaneous",
-      icon: "⚡",
+      iconKey: "shootingStar",
       title: "Spontaneous",
       preview: "Plans meet impulse — I live for both.",
       body: "I plan ahead most of the time, but there are moments when I drop everything to do something that just feels alive — a random road trip, cooking at midnight, or building something weird. Those moments matter to me as much as the careful ones.",
     },
     {
       id: "listener",
-      icon: "👂",
+      iconKey: "radio",
       title: "Active Listener",
       preview: "People call me when they need to vent.",
       body: "I listen the way I'd want someone to listen to me — without interrupting, without judgment, without waiting for my turn to talk. Friends come to me with their worries, their stories, and their 2am spirals. I'm genuinely interested in people.",
     },
     {
       id: "direct",
-      icon: "🎯",
+      iconKey: "compass",
       title: "Straightforward",
       preview: "I say what I mean — respectfully.",
       body: "I don't do passive aggression or hints. I'd rather have an honest, slightly uncomfortable conversation than let things fester. That said, I always make room for the other person — directness isn't the same as bluntness.",
@@ -37,42 +41,42 @@ export const shawnProfile = {
   hobbies: [
     {
       id: "manhwa",
-      icon: "📖",
+      iconKey: "bookshelf",
       title: "Reading Manhwa / Manga",
       preview: "Stories that pull me in visually and emotionally.",
       body: "I love stories in general, but the visual medium of manhwa and manga makes them hit differently — I get lost in the art as much as the plot. Ask me for recommendations; I have opinions.",
     },
     {
       id: "anime",
-      icon: "🎌",
+      iconKey: "crtTv",
       title: "Watching Anime",
       preview: "Escapism, inspiration, and good storytelling.",
       body: "It started as entertainment, became a love for storytelling craft. Some of my biggest inspirations come from anime — the way emotion is animated in this medium is unlike anything else.",
     },
     {
       id: "diy",
-      icon: "🔧",
+      iconKey: "wrench",
       title: "DIY & Electronics Projects",
       preview: "Robotics, microcontrollers, 3D printing.",
       body: "Former robotics competitor. I love engineering things — making a microcontroller do something useful, 3D modeling parts, and figuring out how systems work by taking them apart (and hopefully putting them back together).",
     },
     {
       id: "programming",
-      icon: "💻",
+      iconKey: "floppyDisk",
       title: "Programming",
       preview: "Building things that live on a screen.",
       body: "CS student by study, builder by nature. I find something deeply satisfying about creating something from nothing — a working system, a tool, a small program that solves a real problem.",
     },
     {
       id: "travel",
-      icon: "✈️",
+      iconKey: "bicycle",
       title: "Travelling & Trying New Things",
       preview: "Always up for a first.",
       body: "I think the best version of yourself comes from exposure — new places, new food, new conversations. I'm the kind of person who says yes to things before thinking too hard about them.",
     },
     {
       id: "cooking",
-      icon: "🍳",
+      iconKey: "kettle",
       title: "Cooking",
       preview: "Food is love made edible.",
       body: "Cooking is one of the ways I take care of people. I experiment more than I follow recipes and I'll happily cook for you — no occasion needed.",

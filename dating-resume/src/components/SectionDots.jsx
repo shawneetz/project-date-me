@@ -52,16 +52,28 @@ export default function SectionDots() {
           className="group flex items-center gap-2 justify-end"
         >
           {/* Label tooltip — shows on hover */}
-          <span className="text-[11px] text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span
+            className="text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+            style={{ color: "var(--faded)" }}
+          >
             {label}
           </span>
           {/* The dot */}
           <div
-            className={`rounded-full transition-all duration-300 ${
+            className="rounded-full transition-all duration-300"
+            style={
               active === id
-                ? "w-2 h-2 bg-pink-500"
-                : "w-1.5 h-1.5 bg-neutral-600 hover:bg-neutral-400"
-            }`}
+                ? {
+                    width: "0.5rem",
+                    height: "0.5rem",
+                    backgroundColor: "var(--sun)",
+                  }
+                : {
+                    width: "0.375rem",
+                    height: "0.375rem",
+                    backgroundColor: "var(--faded)",
+                  }
+            }
           />
         </button>
       ))}

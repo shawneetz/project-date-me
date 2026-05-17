@@ -1,9 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap");
 @import "tailwindcss";
 
+:root {
+  /* === PIXEL CITY PALETTE === */
+
+  /* SKY / BACKGROUNDS */
+  --sky-deep: #0d1f2d; /* Deep night sky */
+  --sky-mid: #1a3a4a; /* Mid night sky */
+  --sky-teal: #1e5f6e; /* Teal horizon glow */
+  --sky-dusk: #2e8b8a; /* Dusk teal */
+  --sky-amber: #e8a44a; /* Horizon amber warmth */
+  --sky-gold: #f0c060; /* Horizon gold */
+
+  /* BUILDING SILHOUETTES */
+  --building-dark: #0a1520; /* Darkest building shadow */
+  --building-mid: #162535; /* Mid building */
+  --building-blue: #1e3a50; /* Blue-tinted building */
+
+  /* WINDOW LIGHTS / ACCENTS */
+  --light-warm: #f5a623; /* Warm window glow */
+  --light-amber: #e8852a; /* Deep amber light */
+  --light-gold: #ffd166; /* Bright gold accent */
+  --light-red: #e05050; /* Signal red light */
+  --light-green: #88c070; /* Traffic green */
+  --light-cyan: #60c8d0; /* Cyan flicker */
+
+  /* STAR / PARTICLE */
+  --star-white: #e8f0ff; /* Star white */
+  --star-blue: #a8c8e0; /* Star blue tint */
+
+  /* Legacy aliases for compatibility */
+  --bg: var(--sky-deep);
+  --paper: var(--sky-mid);
+  --warm-paper: var(--building-mid);
+  --ink: var(--star-white);
+  --soft-ink: var(--star-blue);
+  --faded: var(--sky-dusk);
+  --sun: var(--sky-amber);
+  --dust: var(--light-warm);
+  --border: var(--sky-teal);
+  --pixel-border: var(--sky-dusk);
+  --shadow: rgba(10, 21, 32, 0.3);
+}
+
 * {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Space Mono", monospace;
 }
 
 .font-serif {
-  font-family: "DM Serif Display", serif;
+  font-family: "VT323", monospace;
+  letter-spacing: 0.08em;
+}
+
+.font-pixel {
+  font-family: "VT323", monospace;
+  letter-spacing: 0.08em;
 }
