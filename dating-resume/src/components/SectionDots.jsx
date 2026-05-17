@@ -6,17 +6,18 @@
 import { useEffect, useState } from "react";
 
 const SECTIONS = [
-  { id: "about", label: "About" },
+  { id: "qualities", label: "Qualities" },
+  { id: "personal-takes", label: "Personal Takes" },
   { id: "hobbies", label: "Hobbies" },
   { id: "looking", label: "Looking For" },
-  { id: "brings", label: "What I Bring" },
   { id: "dealbreakers", label: "Deal Breakers" },
+  { id: "what-youll-get", label: "What You'll Get" },
+  { id: "quote", label: "Quote" },
 ];
 
 export default function SectionDots() {
-  const [active, setActive] = useState("about");
+  const [active, setActive] = useState("qualities");
 
-  // Watch which section is visible and update the active dot
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,7 +43,6 @@ export default function SectionDots() {
   };
 
   return (
-    // Hidden on mobile (sm:flex), fixed to the right side on desktop
     <div className="hidden sm:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-3 z-50">
       {SECTIONS.map(({ id, label }) => (
         <button
@@ -51,14 +51,12 @@ export default function SectionDots() {
           title={label}
           className="group flex items-center gap-2 justify-end"
         >
-          {/* Label tooltip — shows on hover */}
           <span
             className="text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
             style={{ color: "var(--faded)" }}
           >
             {label}
           </span>
-          {/* The dot */}
           <div
             className="rounded-full transition-all duration-300"
             style={

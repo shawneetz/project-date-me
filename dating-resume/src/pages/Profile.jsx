@@ -1,26 +1,30 @@
 // src/pages/Profile.jsx
-// The public, shareable profile page at /:username
-// It reads the username from the URL, finds the matching profile, and renders it.
-// For now it only has Shawn's data — Supabase can be added later to load any user.
-
 import { useParams } from "react-router-dom";
 import { shawnProfile } from "../data/shawn";
 
-import HeroSection from "../components/HeroSection";
-import CardSection from "../components/CardSection";
-import HobbyCarousel from "../components/HobbyCarousel";
-import LookingForCard from "../components/LookingForCard";
-import BringList from "../components/BringList";
-import DealBreakers from "../components/DealBreakers";
-import QuoteBlock from "../components/QuoteBlock";
+import HeroSection from "../sections/HeroSection";
+import QualitiesSection from "../sections/QualitiesSection";
+import PersonalTakesSection from "../sections/PersonalTakesSection";
+import HobbiesSection from "../sections/HobbiesSection";
+import LookingForSection from "../sections/LookingForSection";
+import DealBreakersSection from "../sections/DealBreakersSection";
+import WhatYoullGetSection from "../sections/WhatYoullGetSection";
+import QuoteSection from "../sections/QuoteSection";
 import SectionDots from "../components/SectionDots";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Profile() {
   const { username } = useParams();
-
-  // For now: only Shawn's profile exists.
-  // Later you'll replace this with a Supabase fetch using the username.
   const profile = username === "shawn" ? shawnProfile : null;
+
+  const hero = useReveal(0);
+  const qualities = useReveal(150);
+  const personalTakes = useReveal(150);
+  const hobbies = useReveal(200);
+  const looking = useReveal(250);
+  const dealBreakers = useReveal(300);
+  const whatYoullGet = useReveal(350);
+  const quote = useReveal(400);
 
   if (!profile) {
     return (
@@ -36,20 +40,65 @@ export default function Profile() {
   }
 
   return (
-    <div
-      className="min-h-screen text-black"
-      style={{ backgroundColor: "var(--bg)" }}
-    >
+    <div className="profile-page" style={{ backgroundColor: "var(--bg)" }}>
       <SectionDots />
 
       <div className="app">
-        <HeroSection profile={profile} />
-        <CardSection id="about" label="About me" items={profile.about} />
-        <HobbyCarousel items={profile.hobbies} />
-        <LookingForCard lookingFor={profile.lookingFor} />
-        <BringList brings={profile.brings} />
-        <DealBreakers dealBreakers={profile.dealBreakers} />
-        <QuoteBlock quote={profile.quote} />
+        <div
+          ref={hero.ref}
+          className={`profile-panel reveal ${hero.visible ? "visible" : ""}`}
+        >
+          <HeroSection profile={profile} />
+        </div>
+
+        <div
+          ref={qualities.ref}
+          className={`profile-panel reveal ${qualities.visible ? "visible" : ""}`}
+        >
+          <QualitiesSection items={profile.qualities} />
+        </div>
+
+        <div
+          ref={personalTakes.ref}
+          className={`profile-panel reveal ${personalTakes.visible ? "visible" : ""}`}
+        >
+          <PersonalTakesSection items={profile.personalTakes} />
+        </div>
+
+        <div
+          ref={hobbies.ref}
+          className={`profile-panel reveal ${hobbies.visible ? "visible" : ""}`}
+        >
+          <HobbiesSection items={profile.hobbies} />
+        </div>
+
+        <div
+          ref={looking.ref}
+          className={`profile-panel reveal ${looking.visible ? "visible" : ""}`}
+        >
+          <LookingForSection lookingFor={profile.lookingFor} />
+        </div>
+
+        <div
+          ref={dealBreakers.ref}
+          className={`profile-panel reveal ${dealBreakers.visible ? "visible" : ""}`}
+        >
+          <DealBreakersSection dealBreakers={profile.dealBreakers} />
+        </div>
+
+        <div
+          ref={whatYoullGet.ref}
+          className={`profile-panel reveal ${whatYoullGet.visible ? "visible" : ""}`}
+        >
+          <WhatYoullGetSection items={profile.whatYoullGet} />
+        </div>
+
+        <div
+          ref={quote.ref}
+          className={`profile-panel reveal ${quote.visible ? "visible" : ""}`}
+        >
+          <QuoteSection quote={profile.quote} />
+        </div>
       </div>
     </div>
   );
