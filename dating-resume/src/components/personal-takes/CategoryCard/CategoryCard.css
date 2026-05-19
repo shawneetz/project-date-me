@@ -1,0 +1,242 @@
+/* ─── Per-card accent CSS custom properties ─────────────────────────────── */
+
+/* 1 – On Learning → amber/gold */
+.takes-grid > [role="listitem"]:nth-child(6n + 1) {
+  --card-accent: #e8a44a;
+}
+
+/* 2 – On Relationships → coral/rose */
+.takes-grid > [role="listitem"]:nth-child(6n + 2) {
+  --card-accent: #e05050;
+}
+
+/* 3 – On Lifestyle → teal/cyan */
+.takes-grid > [role="listitem"]:nth-child(6n + 3) {
+  --card-accent: #60c8d0;
+}
+
+/* 4 – On Entertainment → violet/slate-blue */
+.takes-grid > [role="listitem"]:nth-child(6n + 4) {
+  --card-accent: #8b8ff0;
+}
+
+/* 5 – On Food → olive/warm-green */
+.takes-grid > [role="listitem"]:nth-child(6n + 5) {
+  --card-accent: #88c070;
+}
+
+/* 6 – On Random Things → muted orange */
+.takes-grid > [role="listitem"]:nth-child(6n) {
+  --card-accent: #d4835a;
+}
+
+/* ─── Card base ──────────────────────────────────────────────────────────── */
+
+.takes-category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 1.15rem 0.5rem 1.2rem;
+  background: var(--building-mid);
+  border: 2px solid var(--card-accent, var(--sky-amber));
+  border-radius: 0;
+  box-shadow: 3px 3px 0px #000;
+  cursor: pointer;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease;
+  overflow: hidden;
+}
+
+/* Scanline overlay */
+.takes-category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Corner glow on hover */
+.takes-category-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--card-accent, var(--sky-amber)) 8%, transparent) 0%,
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.takes-category-card:hover,
+.takes-category-card:focus-visible {
+  transform: scale(1.06);
+  box-shadow: 5px 5px 0px #000;
+  outline: none;
+}
+
+.takes-category-card:hover::before,
+.takes-category-card:focus-visible::before {
+  opacity: 1;
+}
+
+/* ─── Icon ───────────────────────────────────────────────────────────────── */
+
+.takes-category-card__icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0;
+  background: color-mix(
+    in srgb,
+    var(--card-accent, var(--sky-amber)) 12%,
+    transparent
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--card-accent, var(--sky-amber)) 45%, transparent);
+  color: var(--card-accent, var(--sky-amber));
+  margin-bottom: 0.65rem;
+  image-rendering: pixelated;
+}
+
+/* ─── Body ───────────────────────────────────────────────────────────────── */
+
+.takes-category-card__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.takes-category-card__title,
+.takes-category-card__count {
+  width: 100%;
+  text-align: center;
+}
+
+.takes-category-card__title {
+  font-family: "VT323", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--card-accent, var(--sky-gold));
+  line-height: 1.2;
+}
+
+.takes-category-card__count {
+  margin-top: 0.35rem;
+  font-family: "VT323", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--sky-dusk));
+  opacity: 0.75;
+}
+
+/* ─── CTA reveal ─────────────────────────────────────────────────────────── */
+
+.takes-category-card__cta-reveal {
+  display: none;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.takes-category-card__cta {
+  font-family: "VT323", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--sky-amber));
+  text-align: center;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 639px) {
+  .takes-category-card {
+    aspect-ratio: 5 / 7;
+    min-height: auto;
+    padding: 1.2rem 0.55rem 1.35rem;
+  }
+}
+
+/* ─── Desktop ────────────────────────────────────────────────────────────── */
+
+@media (min-width: 640px) {
+  .takes-category-card {
+    aspect-ratio: auto;
+    padding: 0.95rem 0.65rem;
+  }
+
+  .takes-category-card__icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .takes-category-card__title {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+  }
+
+  .takes-category-card__count {
+    margin-top: 0.25rem;
+  }
+
+  .takes-category-card__cta-reveal {
+    display: grid;
+    grid-template-rows: 0fr;
+    flex: 0 0 auto;
+    width: 100%;
+    transition: grid-template-rows 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .takes-category-card__cta-reveal-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .takes-category-card__cta {
+    display: block;
+    padding-top: 0.55rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease 0.06s;
+  }
+
+  .takes-category-card:hover .takes-category-card__cta-reveal,
+  .takes-category-card:focus-visible .takes-category-card__cta-reveal {
+    grid-template-rows: 1fr;
+  }
+
+  .takes-category-card:hover .takes-category-card__cta,
+  .takes-category-card:focus-visible .takes-category-card__cta {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

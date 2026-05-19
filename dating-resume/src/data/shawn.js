@@ -6,13 +6,13 @@ import { personalTakesCategories } from "./personalTakesCategories";
 export const shawnProfile = {
   username: "shawn",
   name: "Shawn Alfred Padilla",
-  heroGreeting: "Hello, I'm Shawn!",
+  heroGreeting: "Hi there, I'm Shawn!",
   mbti: "INTP",
   sign: "Capricorn",
   tag: "CS Student",
   photoUrl: "src/assets/shawn-pfp.jpg",
   photoCaption:
-    "CS student. Builder. Occasional midnight chef.\nSomewhere in the Philippines.",
+    "CS student. Builder. Occasional midnight chef.\n Somewhere in the Philippines.",
   funFact:
     "I've been wanting to learn pixel art and just started the midnight I decided to create this website.",
 
@@ -48,7 +48,8 @@ export const shawnProfile = {
       title: "Reading Manhwa / Manga",
       description:
         "I love stories in general, but the visual medium of manhwa and manga makes them hit differently — I get lost in the art as much as the plot. Ask me for recommendations; I have opinions.",
-      imageUrl: "https://images.unsplash.com/photo-1612036782180-6f0b6cd7d37c?w=800&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1612036782180-6f0b6cd7d37c?w=800&q=80",
       imageAlt: "Stack of manga volumes",
     },
     {
@@ -56,7 +57,8 @@ export const shawnProfile = {
       title: "Watching Anime",
       description:
         "It started as entertainment, became a love for storytelling craft. Some of my biggest inspirations come from anime — the way emotion is animated in this medium is unlike anything else.",
-      imageUrl: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&q=80",
       imageAlt: "Anime-style city lights at night",
     },
     {
@@ -64,7 +66,8 @@ export const shawnProfile = {
       title: "DIY & Electronics Projects",
       description:
         "Former robotics competitor. I love engineering things — making a microcontroller do something useful, 3D modeling parts, and figuring out how systems work by taking them apart (and hopefully putting them back together).",
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
       imageAlt: "Electronics workbench with tools",
     },
     {
@@ -72,7 +75,8 @@ export const shawnProfile = {
       title: "Programming",
       description:
         "CS student by study, builder by nature. I find something deeply satisfying about creating something from nothing — a working system, a tool, a small program that solves a real problem.",
-      imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
       imageAlt: "Code on a laptop screen",
     },
     {
@@ -80,7 +84,8 @@ export const shawnProfile = {
       title: "Travelling & Trying New Things",
       description:
         "I think the best version of yourself comes from exposure — new places, new food, new conversations. I'm the kind of person who says yes to things before thinking too hard about them.",
-      imageUrl: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
       imageAlt: "Travel map and camera on a table",
     },
     {
@@ -88,7 +93,8 @@ export const shawnProfile = {
       title: "Cooking",
       description:
         "Cooking is one of the ways I take care of people. I experiment more than I follow recipes and I'll happily cook for you — no occasion needed.",
-      imageUrl: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
       imageAlt: "Home cooking in a pan",
     },
   ],

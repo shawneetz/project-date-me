@@ -1,0 +1,7 @@
+@import "../shared/section-layout.css";
+
+.pxw-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

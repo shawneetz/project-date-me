@@ -1,5 +1,5 @@
-/** Max description length for hobby carousel cards (3:5 card, ~42% body area). */
-export const HOBBY_DESCRIPTION_MAX_LENGTH = 260;
+/** Max description length for hobby carousel cards (~45–50% body area). */
+export const HOBBY_DESCRIPTION_MAX_LENGTH = 200;
 
 export function truncateHobbyDescription(
   text,

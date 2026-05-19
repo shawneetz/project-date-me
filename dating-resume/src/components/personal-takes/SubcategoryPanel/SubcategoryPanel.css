@@ -1,0 +1,53 @@
+.takes-subcategory {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--modal-accent, var(--sky-amber)) 20%, transparent);
+}
+
+.takes-subcategory:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* Section heading — inherits modal accent */
+.takes-subcategory__title {
+  font-family: "VT323", monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--modal-accent, var(--sky-amber));
+  margin-bottom: 0.6rem;
+}
+
+.takes-subcategory__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.takes-subcategory__take {
+  position: relative;
+  padding-left: 0.85rem;
+  font-family: "Space Mono", monospace;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--star-blue);
+}
+
+/* Square pixel bullet recolored to accent */
+.takes-subcategory__take::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--modal-accent, var(--light-warm));
+  text-shadow: 0 0 4px
+    color-mix(in srgb, var(--modal-accent, var(--sky-amber)) 50%, transparent);
+}

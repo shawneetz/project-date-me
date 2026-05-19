@@ -1,3 +1,12 @@
+/**
+ * Icon Map
+ * Purpose: Map icon keys (strings) to SVG icon components - factory function pattern
+ *
+ * Pipeline:
+ * Import all Icon components from './Icons'
+ *   -> Create icons lookup object { key: IconComponent }
+ *   -> getIcon(key) -> find component in lookup -> return <Icon /> or null
+ */
 import {
   ShootingStar,
   Radio,

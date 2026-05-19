@@ -1,0 +1,126 @@
+/* PixelWindow — retro OS-style card */
+
+.pxw {
+  width: 100%;
+  background: var(--building-dark, #0a1520);
+  border: 2px solid rgba(30, 95, 110, 0.55);
+  border-radius: 0;
+  box-shadow:
+    2px 2px 0 0 rgba(0, 0, 0, 0.6),
+    inset 1px 1px 0 0 rgba(96, 200, 208, 0.12);
+  overflow: hidden;
+  image-rendering: pixelated;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  position: relative;
+}
+
+.pxw:hover {
+  border-color: rgba(96, 200, 208, 0.55);
+  box-shadow:
+    2px 2px 0 0 rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(96, 200, 208, 0.08),
+    inset 1px 1px 0 0 rgba(96, 200, 208, 0.18);
+}
+
+.pxw-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px 8px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.45);
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 0, 0, 0.06) 1px,
+    rgba(0, 0, 0, 0.06) 2px
+  );
+  user-select: none;
+}
+
+.pxw-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.pxw-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.pxw-title {
+  flex: 1;
+  font-family: "VT323", monospace;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pxw-grip {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 1px 0;
+}
+
+.pxw-grip span {
+  display: block;
+  width: 10px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.pxw-body {
+  padding: 0.875rem 1rem 1rem;
+  background-image:
+    linear-gradient(rgba(30, 95, 110, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 95, 110, 0.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+  position: relative;
+}
+
+.pxw-body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(96, 200, 208, 0.35) 0%,
+    transparent 100%
+  );
+}
+
+.pxw-content {
+  font-family: "Space Mono", monospace;
+  font-size: 12.5px;
+  color: var(--star-blue, #a8c8e0);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 640px) {
+  .pxw-content {
+    font-size: 13px;
+  }
+
+  .pxw-title {
+    font-size: 15px;
+  }
+}

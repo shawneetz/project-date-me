@@ -1,4 +1,23 @@
+/**
+ * src/pages/Profile.jsx
+ *
+ * PIPELINE STAGE: 3 (Profile Page Orchestration)
+ *
+ * Role: Main profile page component
+ * - Receives :username from router (e.g., /shawn)
+ * - Looks up profile data from src/data/shawn.js
+ * - Orchestrates rendering of all sections in order
+ * - Wraps each section in RevealPanel for staggered animations
+ *
+ * Data Flow:
+ * Route /:username → useParams() → shawnProfile lookup
+ * → Pass profile object as props to sections
+ * → Each section receives relevant slice of data
+ * → Browser renders full profile page
+ */
+
 // src/pages/Profile.jsx
+import "./Profile.css";
 import { useParams } from "react-router-dom";
 import { shawnProfile } from "../data/shawn";
 
@@ -11,21 +30,16 @@ import DealBreakersSection from "../sections/DealBreakersSection";
 import WhatYoullGetSection from "../sections/WhatYoullGetSection";
 import QuoteSection from "../sections/QuoteSection";
 import SectionDots from "../components/SectionDots";
-import { useReveal } from "../hooks/useReveal";
+import RevealPanel from "../components/RevealPanel";
 
 export default function Profile() {
+  // ── Extract username from URL parameter (e.g., /shawn) ──
   const { username } = useParams();
+
+  // ── Look up profile data. Currently only "shawn" exists ──
   const profile = username === "shawn" ? shawnProfile : null;
 
-  const hero = useReveal(0);
-  const qualities = useReveal(60);
-  const personalTakes = useReveal(100);
-  const hobbies = useReveal(140);
-  const looking = useReveal(180);
-  const dealBreakers = useReveal(220);
-  const whatYoullGet = useReveal(260);
-  const quote = useReveal(300);
-
+  // ── Handle case where profile doesn't exist ──
   if (!profile) {
     return (
       <div
@@ -39,66 +53,52 @@ export default function Profile() {
     );
   }
 
+  // ── Main page render: sections staggered with reveal animations ──
   return (
     <div className="profile-page" style={{ backgroundColor: "var(--bg)" }}>
+      {/* Navigation dots showing current section position */}
       <SectionDots />
 
       <div className="app">
-        <div
-          ref={hero.ref}
-          className={`profile-panel reveal ${hero.visible ? "visible" : ""}`}
-        >
+        {/* Hero: Greeting + name + photo (no delay for immediate impact) */}
+        <RevealPanel delay={0}>
           <HeroSection profile={profile} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={qualities.ref}
-          className={`profile-panel reveal ${qualities.visible ? "visible" : ""}`}
-        >
+        {/* Qualities: Personal traits displayed as pixel windows */}
+        <RevealPanel delay={60}>
           <QualitiesSection items={profile.qualities} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={personalTakes.ref}
-          className={`profile-panel reveal ${personalTakes.visible ? "visible" : ""}`}
-        >
+        {/* Personal Takes: Interactive category grid with modal */}
+        <RevealPanel delay={100}>
           <PersonalTakesSection categories={profile.personalTakesCategories} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={hobbies.ref}
-          className={`profile-panel reveal ${hobbies.visible ? "visible" : ""}`}
-        >
+        {/* Hobbies: Carousel of hobby cards with images */}
+        <RevealPanel delay={140}>
           <HobbiesSection items={profile.hobbies} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={looking.ref}
-          className={`profile-panel reveal ${looking.visible ? "visible" : ""}`}
-        >
+        {/* Looking For: What you're seeking in a relationship */}
+        <RevealPanel delay={180}>
           <LookingForSection lookingFor={profile.lookingFor} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={dealBreakers.ref}
-          className={`profile-panel reveal ${dealBreakers.visible ? "visible" : ""}`}
-        >
+        {/* Deal Breakers: List of non-negotiables */}
+        <RevealPanel delay={220}>
           <DealBreakersSection dealBreakers={profile.dealBreakers} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={whatYoullGet.ref}
-          className={`profile-panel reveal ${whatYoullGet.visible ? "visible" : ""}`}
-        >
+        {/* What You'll Get: Benefits of dating you */}
+        <RevealPanel delay={260}>
           <WhatYoullGetSection items={profile.whatYoullGet} />
-        </div>
+        </RevealPanel>
 
-        <div
-          ref={quote.ref}
-          className={`profile-panel reveal ${quote.visible ? "visible" : ""}`}
-        >
+        {/* Quote: Closing featured quote or motto */}
+        <RevealPanel delay={300}>
           <QuoteSection quote={profile.quote} />
-        </div>
+        </RevealPanel>
       </div>
     </div>
   );

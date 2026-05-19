@@ -1,0 +1,14 @@
+/* Profile page — scroll reveal panels */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.99);
+  transition:
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
